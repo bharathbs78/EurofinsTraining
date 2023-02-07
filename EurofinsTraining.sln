@@ -13,6 +13,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab12", "Lab12\Lab12.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab13", "Lab13\Lab13.csproj", "{C6E82230-4A6D-4D4B-9AC4-03058776A597}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator.ConsoleApp", "SimpleCalculator.ConsoleApp\SimpleCalculator.ConsoleApp.csproj", "{62885B61-1CEC-46F4-ABAF-58630FB461E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator.Business", "SimpleCalculator.Business\SimpleCalculator.Business.csproj", "{886C2B81-023C-4227-B881-1968202745DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleCalculatorApp", "SimpleCalculatorApp", "{CEB89282-BFCA-41E9-BA38-D5057EE42549}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{8AAE8EEE-AC33-4E8F-A707-384753A2DFC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{D7BBE3BA-F521-4E5A-8E6C-4A7AB45652D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator.WindowsFormsApp", "SimpleCalculator.WindowsFormsApp\SimpleCalculator.WindowsFormsApp.csproj", "{2990AE43-0F74-4CB2-9556-16BA59F6EDB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +51,28 @@ Global
 		{C6E82230-4A6D-4D4B-9AC4-03058776A597}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6E82230-4A6D-4D4B-9AC4-03058776A597}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6E82230-4A6D-4D4B-9AC4-03058776A597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62885B61-1CEC-46F4-ABAF-58630FB461E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62885B61-1CEC-46F4-ABAF-58630FB461E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62885B61-1CEC-46F4-ABAF-58630FB461E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62885B61-1CEC-46F4-ABAF-58630FB461E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886C2B81-023C-4227-B881-1968202745DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886C2B81-023C-4227-B881-1968202745DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886C2B81-023C-4227-B881-1968202745DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886C2B81-023C-4227-B881-1968202745DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2990AE43-0F74-4CB2-9556-16BA59F6EDB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2990AE43-0F74-4CB2-9556-16BA59F6EDB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2990AE43-0F74-4CB2-9556-16BA59F6EDB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2990AE43-0F74-4CB2-9556-16BA59F6EDB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{62885B61-1CEC-46F4-ABAF-58630FB461E5} = {8AAE8EEE-AC33-4E8F-A707-384753A2DFC9}
+		{886C2B81-023C-4227-B881-1968202745DE} = {D7BBE3BA-F521-4E5A-8E6C-4A7AB45652D2}
+		{8AAE8EEE-AC33-4E8F-A707-384753A2DFC9} = {CEB89282-BFCA-41E9-BA38-D5057EE42549}
+		{D7BBE3BA-F521-4E5A-8E6C-4A7AB45652D2} = {CEB89282-BFCA-41E9-BA38-D5057EE42549}
+		{2990AE43-0F74-4CB2-9556-16BA59F6EDB3} = {8AAE8EEE-AC33-4E8F-A707-384753A2DFC9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCA26B52-FADC-4BAB-AFC6-D3427FC75906}
