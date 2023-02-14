@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1056E37E-6653-4B18-8E3E-A281959058CE}</ProjectGuid>
+    <ProjectGuid>{3A88D233-8B33-44EA-BF25-F3966A500B38}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Lab1</RootNamespace>
-    <AssemblyName>Lab1</AssemblyName>
+    <RootNamespace>StudentDetails.Presentation</RootNamespace>
+    <AssemblyName>StudentDetails.Presentation</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Lab1.Q15</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,21 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Q10.cs" />
-    <Compile Include="Q11.cs" />
-    <Compile Include="Q12.cs" />
-    <Compile Include="Q13.cs" />
-    <Compile Include="Q15.cs" />
-    <Compile Include="q4.cs" />
-    <Compile Include="Q6.cs" />
-    <Compile Include="Q7.cs" />
-    <Compile Include="Q8.cs" />
-    <Compile Include="Q9.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FindSum\Ranker.csproj">
+      <Project>{7dbd1ad7-0c04-4dc4-88ff-6c10869aeeb9}</Project>
+      <Name>Ranker</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1056E37E-6653-4B18-8E3E-A281959058CE}</ProjectGuid>
+    <ProjectGuid>{6F8A0254-B433-44CF-AE5D-A3BA531FD628}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Lab1</RootNamespace>
-    <AssemblyName>Lab1</AssemblyName>
+    <RootNamespace>OODesign1_Trainer_Trainee_</RootNamespace>
+    <AssemblyName>OODesign1_Trainer_Trainee_</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Lab1.Q15</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,16 +45,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Q10.cs" />
-    <Compile Include="Q11.cs" />
-    <Compile Include="Q12.cs" />
-    <Compile Include="Q13.cs" />
-    <Compile Include="Q15.cs" />
-    <Compile Include="q4.cs" />
-    <Compile Include="Q6.cs" />
-    <Compile Include="Q7.cs" />
-    <Compile Include="Q8.cs" />
-    <Compile Include="Q9.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
