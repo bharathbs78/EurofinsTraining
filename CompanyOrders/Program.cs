@@ -97,12 +97,8 @@ namespace CompanyOrders
         public double SplDiscount { get; set; }
         public override double GetTotalWorth()
         {
-            double total = 0.0;
-            foreach (Order order in this.Orders)
-            {
-                total += order.GetTotalWorth();
-            }
-            return total*((100-SplDiscount)/100);
+            double total = base.GetTotalWorth();
+            return total*((100-SplDiscount)/100);//partial overloading
         }
     }
     class Order
