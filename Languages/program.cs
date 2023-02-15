@@ -22,7 +22,7 @@ namespace Languages
  /*       public Java Java { get; set; }
         public CSharp CSharp { get; set; }
         public C C { get; set; }*/
-        public List<ILanguage> Languages= new List<ILanguage>();
+        public List<ILanguage> Languages { get; set; } = new List<ILanguage>();
         public void WorkWithLanguages()
         {
 /*          Console.WriteLine(Java.GetName());
