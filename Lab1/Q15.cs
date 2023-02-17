@@ -11,10 +11,17 @@ namespace Lab1
         static void Main(string[] args)
         {
             int num;
-            int rem, bin=0;
+            int rem;
+            string binary="";
             Console.WriteLine("Enter num");
             num=int.Parse(Console.ReadLine());
-            Console.WriteLine(bin);
+            while(num!=0)
+            {
+                rem = num % 2;
+                num = num / 2;
+                binary = rem + binary;
+            }
+            Console.WriteLine(binary);
         }
     }
 }
