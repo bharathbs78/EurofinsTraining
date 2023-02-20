@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Globalization;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -62,6 +63,20 @@ namespace Lab1
                     }
                     break;
                 case 4:
+                    for (int b = 1; Math.Pow(b, 2) <= n; b++)
+                        Console.WriteLine(Math.Pow(b, 2));
+                    break;
+                case 5:
+                    int x = 1;
+                    int y = 0;
+                    while (x  < n)
+                    {
+                        y = y + 4;
+                        if (y % 12 == 0)
+                            continue;
+                        Console.WriteLine(x);
+                        x=x + y;
+                    }
                     break;
             }
         }

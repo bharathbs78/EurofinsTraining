@@ -11,6 +11,7 @@ namespace CollectionsDemo2//Dynamic collections
         static void Main(string[] args)
         {
             DynamicIntArray numbers = new DynamicIntArray();
+            DynamicArray<Double> numbers2 = new DynamicArray<Double>();
             for(int i = 0; i < 100; i++)
             {
                 numbers.Add(i);
@@ -21,6 +22,39 @@ namespace CollectionsDemo2//Dynamic collections
             }
         }
     }
+    class DynamicArray<T>//T-type
+    {
+        public int Size
+        {
+            get
+            {
+                return index;
+            }
+        }
+        private T[] numbers = new T[10];
+        private int index = 0;
+        public DynamicArray()
+        {
+
+        }
+
+        public void Add(T value)
+        {
+            if (index < numbers.Length)
+                numbers[index++] = value;
+            else
+            {
+                Array.Resize(ref numbers, numbers.Length * 2);
+                numbers[index++] = value;
+            }
+
+        }
+
+        internal T Get(int i)
+        {
+            return numbers[i];
+        }
+    } 
     class DynamicIntArray
     {
         public int Size 
@@ -39,12 +73,14 @@ namespace CollectionsDemo2//Dynamic collections
                 numbers[index++] = value;
             else
             {
-                int[] temp = new int[numbers.Length * 2];
-                for(int i = 0; i < numbers.Length; i++)
-                {
-                    temp[i] = numbers[i];
-                }
-                numbers = temp;//point to new array
+                //int[] temp = new int[numbers.Length * 2];
+                //for(int i = 0; i < numbers.Length; i++)
+                //{
+                //    temp[i] = numbers[i];
+                //}
+               // Array.Copy(numbers,temp, numbers.Length);// Always use built-in libraries
+                //numbers = temp;//point to new array
+                Array.Resize(ref numbers, numbers.Length*2);
                 numbers[index++] = value;
             }
 
