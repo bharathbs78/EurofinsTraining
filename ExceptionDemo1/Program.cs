@@ -101,6 +101,7 @@ namespace ExceptionDemo1
                 UnableToSaveException exp = new UnableToSaveException("Unable to save the calculated output",e);//never discard original exception
                 throw exp;
             }
+            
             return sum;
         }
     }
