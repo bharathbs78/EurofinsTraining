@@ -55,7 +55,7 @@ namespace BankApp.Domain
         public void OpenAccount(Account account)
         {
             if(account.OpeningDate!=null)
-                throw new AccountNotOpenedException("Account is not yet Opened");
+                throw new AccountAlreadyOpenException("Account is already Opened");
             account.OpeningDate = DateTime.Now.ToString();
             account.isActive= true;
         }
