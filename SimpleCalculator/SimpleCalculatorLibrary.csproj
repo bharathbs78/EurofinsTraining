@@ -46,5 +46,11 @@
     <Compile Include="OddNumberException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleCalculator.DataAccessLibrary\SimpleCalculator.DataAccessLibrary.csproj">
+      <Project>{a7f268a3-dc60-4884-a4b7-6a9fa7986502}</Project>
+      <Name>SimpleCalculator.DataAccessLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

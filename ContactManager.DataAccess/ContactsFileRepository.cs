@@ -14,12 +14,17 @@ namespace ContactManager.DataAccess
     {
         public void Delete(int id)
         {
+            StreamWriter sw = null;
             try
             {
                 Contact c = GetContact(id);
                 List<Contact> list = GetAll();
-                list.Remove(c);
-                StreamWriter sw = GetWriter(false);
+                Console.WriteLine(list.Remove(c));//implement manually
+                foreach (Contact c2 in list)
+                {
+                    Console.WriteLine(ContactMapper.ContactToString(c2));
+                }
+                sw = GetWriter(false);
                 foreach (var item in list)
                 {
                     sw.WriteLine(ContactMapper.ContactToString(item));
@@ -29,7 +34,11 @@ namespace ContactManager.DataAccess
             {
                 throw new CannotSaveContactException("Contacts cannot be saved",e);
             }
+            finally
+            {
+                sw.Close();
             }
+        }
         public void Edit(int id, Contact contact)
         {
             try
@@ -98,20 +107,26 @@ namespace ContactManager.DataAccess
                     list.Add(ContactMapper.StringToContact(contact));
                 }
             }
+            sr.Close();
             return list;
         }
 
         public void Save(Contact contact)
         {
+            StreamWriter sw = null;
             try
             {
                 string contactString = ContactMapper.ContactToString(contact);
-                StreamWriter sw = GetWriter();
+                sw = GetWriter();
                 sw.WriteLine(contactString);
                 sw.Close();
             }catch(Exception e)
             {
                 throw new CannotSaveContactException("Contact Cannot be Saved",e);
+            }
+            finally
+            {
+                sw.Close();
             }
         }
 

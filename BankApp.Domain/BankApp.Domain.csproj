@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A7F268A3-DC60-4884-A4B7-6A9FA7986502}</ProjectGuid>
+    <ProjectGuid>{8519AC8C-94B3-46CA-8FD7-A1FE49824801}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleCalculator.DataAccessLibrary</RootNamespace>
-    <AssemblyName>SimpleCalculator.DataAccessLibrary</AssemblyName>
+    <RootNamespace>BankApp.Domain</RootNamespace>
+    <AssemblyName>BankApp.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,9 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculatorRepo.cs" />
-    <Compile Include="ICalculatorRepo.cs" />
+    <Compile Include="AccountManager.cs" />
+    <Compile Include="EntityClass\Account.cs" />
+    <Compile Include="Exceptions\AccountAlreadyClosedException.cs" />
+    <Compile Include="Exceptions\AccountAlreadyOpenException.cs" />
+    <Compile Include="Exceptions\AccountCannotBeClosedException.cs" />
+    <Compile Include="Exceptions\AccountNotActiveException.cs" />
+    <Compile Include="Exceptions\AccountNotOpenedException.cs" />
+    <Compile Include="Exceptions\DailyTransactionLimitReachedException.cs" />
+    <Compile Include="Exceptions\FailedToTransferMoneyException.cs" />
+    <Compile Include="Exceptions\InsufficientBalanceException.cs" />
+    <Compile Include="Exceptions\InvalidPinException.cs" />
+    <Compile Include="IAccountManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BankApp.Data\BankApp.Data.csproj">
+      <Project>{bbd28389-50ff-4578-97de-d447b70d47be}</Project>
+      <Name>BankApp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INotification\Notification.csproj">
+      <Project>{b8549a0e-4ee6-477d-bd13-52d0df9f0f37}</Project>
+      <Name>Notification</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

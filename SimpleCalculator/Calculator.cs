@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleCalculator.DataAccessLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,23 @@ namespace SimpleCalculatorLibrary
         //even numbers only
         //throws suitable exception if business rules violated
         //save to file
+        private ICalculatorRepo repo = null;
+        public Calculator(ICalculatorRepo repo)
+        {
+            this.repo= repo;
+        }
         public int Sum(int x, int y)
         {
             if (x >= 0 && y >= 0)
                 if (x % 2 == 0 && y % 2 == 0)
-                    return x + y;
+                {
+                    int sum = x + y;
+                    //ICalculatorRepo cal=new CalculatorRepo(); // USE DIP here
+                    //cal.Save(sum.ToString());
+                    //mocking - manula and automatic
+                    repo.Save(sum.ToString());
+                    return sum;
+                }
                 else
                     throw new OddNumberException("Number(s) cannot be odd");
             else

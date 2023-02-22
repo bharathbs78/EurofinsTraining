@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimpleCalculator.DataAccessLibrary
 {
-    public class CalculatorRepo
+    public class CalculatorRepo : ICalculatorRepo
     {
         public bool Save(string data)
         {

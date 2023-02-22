@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4D23D743-CFFA-4FF9-AE65-12DD71199A67}</ProjectGuid>
+    <ProjectGuid>{0283853F-7BBE-4BE3-9047-9D99DE1CCC78}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleCalculator.UnitTest</RootNamespace>
-    <AssemblyName>SimpleCalculator.UnitTest</AssemblyName>
+    <RootNamespace>BankApp.Test</RootNamespace>
+    <AssemblyName>BankApp.Test</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -62,20 +62,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculatorUnitTest.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleCalculator.DataAccessLibrary\SimpleCalculator.DataAccessLibrary.csproj">
-      <Project>{A7F268A3-DC60-4884-A4B7-6A9FA7986502}</Project>
-      <Name>SimpleCalculator.DataAccessLibrary</Name>
+    <ProjectReference Include="..\BankApp.Data\BankApp.Data.csproj">
+      <Project>{bbd28389-50ff-4578-97de-d447b70d47be}</Project>
+      <Name>BankApp.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SimpleCalculator\SimpleCalculatorLibrary.csproj">
-      <Project>{65f8a55e-4f39-4c36-bc35-ede0d117eb3c}</Project>
-      <Name>SimpleCalculatorLibrary</Name>
+    <ProjectReference Include="..\BankApp.Domain\BankApp.Domain.csproj">
+      <Project>{8519ac8c-94b3-46ca-8fd7-a1fe49824801}</Project>
+      <Name>BankApp.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INotification\Notification.csproj">
+      <Project>{b8549a0e-4ee6-477d-bd13-52d0df9f0f37}</Project>
+      <Name>Notification</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
