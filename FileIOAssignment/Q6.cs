@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab1
+namespace FileIOAssignment
 {
-    internal class Q19
+    internal class Q6//do later
     {
         static void Main(string[] args)
         {

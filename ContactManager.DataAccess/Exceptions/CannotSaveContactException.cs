@@ -8,6 +8,6 @@ namespace ContactManager.DataAccess.Exceptions
 {
     internal class CannotSaveContactException:ApplicationException
     {
-        public CannotSaveContactException(string message) : base(message) { }
+        public CannotSaveContactException(string message,Exception innerException) : base(message,innerException) { }
     }
 }

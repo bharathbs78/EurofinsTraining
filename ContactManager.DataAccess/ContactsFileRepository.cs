@@ -25,9 +25,9 @@ namespace ContactManager.DataAccess
                     sw.WriteLine(ContactMapper.ContactToString(item));
                 }
             }
-            catch(CannotSaveContactException e)
+            catch(Exception e)
             {
-                throw new CannotSaveContactException("Contacts cannot be saved");
+                throw new CannotSaveContactException("Contacts cannot be saved",e);
             }
             }
         public void Edit(int id, Contact contact)
@@ -103,10 +103,16 @@ namespace ContactManager.DataAccess
 
         public void Save(Contact contact)
         {
-            string contactString=ContactMapper.ContactToString(contact);
-            StreamWriter sw = GetWriter();
-            sw.WriteLine(contactString);
-            sw.Close();
+            try
+            {
+                string contactString = ContactMapper.ContactToString(contact);
+                StreamWriter sw = GetWriter();
+                sw.WriteLine(contactString);
+                sw.Close();
+            }catch(Exception e)
+            {
+                throw new CannotSaveContactException("Contact Cannot be Saved",e);
+            }
         }
 
         private StreamReader GetReader() => new StreamReader(@"C:\Users\Admin\Desktop\contactManager.txt");

@@ -18,6 +18,9 @@ namespace ContactManager.ConsoleApp
                 PrintMainMenu();
                 switch(int.Parse(Console.ReadLine())) 
                 {
+                    case 1:
+                        GetContactInfo();
+                        break;
 
 
                         
@@ -33,6 +36,12 @@ namespace ContactManager.ConsoleApp
             Console.WriteLine("4. Get All Contacts");
             Console.WriteLine("5. Get Contact By Location");
             Console.WriteLine("6. Get Contact By ID");
+        }
+        static void GetContactInfo()
+        {
+            Contact contact=new Contact();
+            Console.WriteLine("Enter ID");
+            
         }
     }
 }
