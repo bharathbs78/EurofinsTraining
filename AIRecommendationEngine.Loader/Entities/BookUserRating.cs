@@ -9,8 +9,8 @@ namespace AIRecommendationEngine.Loader.Entities
     public class BookUserRating
     {
         public int Rating { get; set; }
-        public string USBN { get; set; }
-        public string UserId { get; set; }
+        public string ISBN { get; set; }
+        public int UserId { get; set; }
         public Book book { get; set; }
         public User user { get; set; }
     }

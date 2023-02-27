@@ -48,8 +48,14 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="IDataLoader.cs" />
     <Compile Include="Mappers\BookMapper.cs" />
+    <Compile Include="Mappers\BookRatingMapper.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Files\BX-Book-Ratings.csv" />
+    <None Include="Files\BX-Books.csv" />
+    <None Include="Files\BX-Users.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
