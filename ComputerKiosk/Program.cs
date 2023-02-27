@@ -29,6 +29,9 @@ namespace ComputerKiosk
                     case 'n':
                         Customer customer=new Customer();
                         break;
+                    case 'e':
+                        break;
+                        
                 }
             }
         }
@@ -56,9 +59,15 @@ namespace ComputerKiosk
     {
         public int Id { get; set; }
         public string Address { get; set; }
+        public string password { get;set; }
         public void placeOrder()
         {
 
+        }
+        public void Login(int id,string password)
+        {
+            if(this.Id==id && this.password==password)
+                Console.WriteLine("Login Successful");
         }
     }
     class Details { 
@@ -82,6 +91,7 @@ namespace ComputerKiosk
     {
         public int Id { get; set; } = 4321;
         public string Password { get; set; } = "a";
+        public List<Order> orders { get; set; } = new List<Order>() ;
         public void addComputer()
         {
 

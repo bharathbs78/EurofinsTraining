@@ -68,6 +68,20 @@ namespace BankApp.Test
             _accountManager.Deposit(account, 10000);
         }
         [TestMethod]
+        [ExpectedException(typeof(AccountNotActiveException))]
+        public void AccountManager_DepositMadeAccountClosed_ShouldThrowException()
+        {
+            Account account = new Account
+            {
+                Accno = 1234,
+                Name = "bha",
+                Balance = 0,
+            };
+            _accountManager.OpenAccount(account);
+            _accountManager.CloseAccount(account);
+            _accountManager.Deposit(account, 10000);
+        }
+        [TestMethod]
         public void AccountManager_ValidDeposit_ShouldGiveNotification()
         {
             Account account = new Account
@@ -136,6 +150,20 @@ namespace BankApp.Test
             };
             _accountManager.Withdraw(account, 5000, 1111);
         }
+        [TestMethod]
+        public void AccountManager_AccountCannotCloseInvalidBalance_ShouldThrowException()
+        {
+            Account account = new Account
+            {
+                Accno = 1234,
+                Name = "bha",
+                Balance = 10000,
+                Pin = 1111
+            };
+            _accountManager.OpenAccount(account);
+            Assert.ThrowsException<AccountCannotBeClosedException>(() => _accountManager.CloseAccount(account));
+        }
+
     }
 
 }

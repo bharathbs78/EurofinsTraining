@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1056E37E-6653-4B18-8E3E-A281959058CE}</ProjectGuid>
+    <ProjectGuid>{F6D6BFF6-9F12-4208-9D46-5D6254A1B298}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Lab1</RootNamespace>
-    <AssemblyName>Lab1</AssemblyName>
+    <RootNamespace>MtDemo1</RootNamespace>
+    <AssemblyName>MtDemo1</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Lab1.Q19</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,35 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Q18.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Q1.cs" />
-    <Compile Include="Q10.cs" />
-    <Compile Include="Q11.cs" />
-    <Compile Include="Q12.cs" />
-    <Compile Include="Q13.cs" />
-    <Compile Include="Q14.cs" />
-    <Compile Include="Q15.cs" />
-    <Compile Include="Q16.cs" />
-    <Compile Include="Q19.cs" />
-    <Compile Include="Q20.cs" />
-    <Compile Include="Q21.cs" />
-    <Compile Include="Q22.cs" />
-    <Compile Include="Q23.cs" />
-    <Compile Include="Q24.cs" />
-    <Compile Include="Q25.cs" />
-    <Compile Include="Q26.cs" />
-    <Compile Include="Q27.cs" />
-    <Compile Include="Q28.cs" />
-    <Compile Include="Q29.cs" />
-    <Compile Include="Q30.cs" />
-    <Compile Include="q4.cs" />
-    <Compile Include="Q5.cs" />
-    <Compile Include="Q6.cs" />
-    <Compile Include="Q7.cs" />
-    <Compile Include="Q8.cs" />
-    <Compile Include="Q9.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
