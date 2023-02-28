@@ -1,4 +1,4 @@
-﻿using AIRecommendationEngine.Loader.Entities;
+﻿using AIRecommendationEngine.Common.Entities;
 using AIRecommendationEngine.Loader.Mappers;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ namespace AIRecommendationEngine.Loader
             List<BookUserRating> ratings = new List<BookUserRating>();
             Task task = new Task(() =>
             {
-                using (StreamReader streamReader = new StreamReader("BX-Books.csv"))
+                using (StreamReader streamReader = new StreamReader("C:\\Users\\Admin\\source\\repos\\EurofinsTraining\\AIRecommendationEngine.Loader\\Files\\BX-Books.csv"))
                 {
                     streamReader.ReadLine();
                     while (!streamReader.EndOfStream)
@@ -28,7 +28,7 @@ namespace AIRecommendationEngine.Loader
             });
             Task task1 = new Task(() =>
             {
-                using (StreamReader streamReader = new StreamReader("BX-Users.csv"))
+                using (StreamReader streamReader = new StreamReader("C:\\Users\\Admin\\source\\repos\\EurofinsTraining\\AIRecommendationEngine.Loader\\Files\\BX-Users.csv"))
                 {
                     streamReader.ReadLine();
                     while (!streamReader.EndOfStream)
@@ -37,7 +37,7 @@ namespace AIRecommendationEngine.Loader
             });
             Task task2 = new Task(() =>
             {
-                using (StreamReader streamReader = new StreamReader("BX-Book-Ratings.csv"))
+                using (StreamReader streamReader = new StreamReader("C:\\Users\\Admin\\source\\repos\\EurofinsTraining\\AIRecommendationEngine.Loader\\Files\\BX-Book-Ratings.csv"))
                 {
                     streamReader.ReadLine();
                     while (!streamReader.EndOfStream)
@@ -48,24 +48,28 @@ namespace AIRecommendationEngine.Loader
             task1.Start();
             task2.Start();
             Task.WaitAll(task,task1,task2);
-            BookDetails bookDetails = new BookDetails();
-
-            foreach(var book in books)
+            ParallelOptions parallelOptions = new ParallelOptions
             {
-                book.bookUserRatings=ratings.FindAll(l => l.ISBN== book.ISBN);
-            }
-            foreach (var user in users)
+                MaxDegreeOfParallelism = Environment.ProcessorCount / 2
+            };
+            Parallel.ForEach(books,parallelOptions,book =>
             {
-                user.userRatings = ratings.FindAll(l => l.UserId==user.UserId);
-            }
-            foreach (var rate in ratings)
+                book.bookUserRatings = ratings.FindAll(l => l.ISBN == book.ISBN);
+            });
+            Parallel.ForEach(users,parallelOptions, user =>
+            {
+                user.userRatings = ratings.FindAll(l => l.UserId == user.UserId);
+            });
+            Parallel.ForEach(ratings,parallelOptions, rate =>
             {
                 rate.user = users.Find(u => u.UserId == rate.UserId);
                 rate.book = books.Find(b => b.ISBN == rate.ISBN);
-            }
+            });
+            BookDetails bookDetails= new BookDetails();
             bookDetails.Users=users;
             bookDetails.Books=books;
             bookDetails.BookUsersRatings=ratings;
+            bookDetails.BookUsersRatings.Find(b => b.user.State == null);
             return bookDetails;
         }
     }

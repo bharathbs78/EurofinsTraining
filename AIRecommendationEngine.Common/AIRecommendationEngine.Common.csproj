@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{82F1A75E-455E-423B-9A04-98566605F75D}</ProjectGuid>
+    <ProjectGuid>{1BDD803C-B601-4DA6-901F-76A27A93ADEA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AIRecommendationEngine.Loader</RootNamespace>
-    <AssemblyName>AIRecommendationEngine.Loader</AssemblyName>
+    <RootNamespace>AIRecommendationEngine.Common</RootNamespace>
+    <AssemblyName>AIRecommendationEngine.Common</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,23 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSVLoader.cs" />
-    <Compile Include="IDataLoader.cs" />
-    <Compile Include="Mappers\BookMapper.cs" />
-    <Compile Include="Mappers\BookRatingMapper.cs" />
-    <Compile Include="Mappers\UserMapper.cs" />
+    <Compile Include="Entities\Book.cs" />
+    <Compile Include="Entities\BookDetails.cs" />
+    <Compile Include="Entities\BookUserRating.cs" />
+    <Compile Include="Entities\Preference.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AIRecommendationEngine.Common\AIRecommendationEngine.Common.csproj">
-      <Project>{1bdd803c-b601-4da6-901f-76a27a93adea}</Project>
-      <Name>AIRecommendationEngine.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Files\BX-Book-Ratings.csv" />
-    <None Include="Files\BX-Books.csv" />
-    <None Include="Files\BX-Users.csv" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

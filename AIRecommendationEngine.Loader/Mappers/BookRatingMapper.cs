@@ -1,4 +1,4 @@
-﻿using AIRecommendationEngine.Loader.Entities;
+﻿using AIRecommendationEngine.Common.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{82F1A75E-455E-423B-9A04-98566605F75D}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AIRecommendationEngine.Loader</RootNamespace>
-    <AssemblyName>AIRecommendationEngine.Loader</AssemblyName>
+    <ProjectGuid>{2BC36430-4685-40BF-9CB4-D4DEF3DD1F5C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AIRecommendationEngine.ConsoleApp</RootNamespace>
+    <AssemblyName>AIRecommendationEngine.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,23 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSVLoader.cs" />
-    <Compile Include="IDataLoader.cs" />
-    <Compile Include="Mappers\BookMapper.cs" />
-    <Compile Include="Mappers\BookRatingMapper.cs" />
-    <Compile Include="Mappers\UserMapper.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AIRecommendationEngine.Common\AIRecommendationEngine.Common.csproj">
       <Project>{1bdd803c-b601-4da6-901f-76a27a93adea}</Project>
       <Name>AIRecommendationEngine.Common</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Files\BX-Book-Ratings.csv" />
-    <None Include="Files\BX-Books.csv" />
-    <None Include="Files\BX-Users.csv" />
+    <ProjectReference Include="..\AIRecommendationEngine\AIRecommendationEngine.Integrator.csproj">
+      <Project>{9f0b7eb2-ba41-4c8d-a265-e931d137482d}</Project>
+      <Name>AIRecommendationEngine.Integrator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

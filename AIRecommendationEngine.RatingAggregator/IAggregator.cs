@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AIRecommendationEngine.Loader
+namespace AIRecommendationEngine.RatingAggregator
 {
-    public interface IDataLoader
+    public interface IAggregator
     {
-        BookDetails Load();
+        Dictionary<string, List<int>> Aggregate(BookDetails bookDetails, Preference preference);
     }
 }

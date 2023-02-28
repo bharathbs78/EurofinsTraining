@@ -1,4 +1,4 @@
-﻿using AIRecommendationEngine.Loader.Entities;
+﻿using AIRecommendationEngine.Common.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace AIRecommendationEngine.Loader.Mappers
             int UserID = int.Parse(list[0]);
             string[] location = list[1].Split(',');
             string City = location[0];
-            string Region = location[1];
+            string Region = location[1].Trim();
             string Country= location[2];
             int age = list[2] == "NULL" ? 0 : int.Parse(list[2]);
             User user = new User
