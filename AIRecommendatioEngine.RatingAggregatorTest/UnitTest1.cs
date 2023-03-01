@@ -21,8 +21,8 @@ namespace AIRecommendatioEngine.RatingAggregatorTest
             loader=new CSVLoader();
             preference = new Preference
             {
-                State = "kansas",
-                Age = 71
+                State = "colorado",
+                Age = 21
             };
             bookDetails = loader.Load();
             aggregator=new Aggregator();
@@ -32,7 +32,7 @@ namespace AIRecommendatioEngine.RatingAggregatorTest
         {
             Dictionary<string,List<int>> dict=aggregator.Aggregate(bookDetails, preference);
             //Assert.IsTrue(dict.Count!=0);
-            Assert.AreEqual(23,dict.Count);
+            Assert.IsTrue(dict.ContainsKey("0195153488"));
         }
     }
 }

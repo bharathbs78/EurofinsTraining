@@ -30,7 +30,20 @@ namespace AIRecommendationEngine.Integrator
             BookDetails bookDetails = dataLoader.Load();
             Dictionary<string, List<int>> dict = aggregator.Aggregate(bookDetails, preference);
             List<int> baseData;
-            baseData = dict[preference.ISBN];
+            if (dict.ContainsKey(preference.ISBN))
+            {
+                baseData= dict[preference.ISBN];
+            }
+            else
+            {
+                baseData= new List<int> { 10,10,10,10,10,10,10,10,10,10};
+                //Random random= new Random();
+                //baseData = new List<int>();
+                //for(int i = 0; i < random.Next(25); i++)
+                //{
+                //    baseData.Add(random.Next(10));
+                //}
+            }
             dict =dict.Where(d => d.Value.Count > 0).ToDictionary(d => d.Key,d => d.Value);
             Dictionary<string, double> recommendations = new Dictionary<string, double>();
             foreach(var key in dict.Keys)
@@ -45,10 +58,10 @@ namespace AIRecommendationEngine.Integrator
             List<KeyValuePair<string, double>> recommendList = recommendations.ToList();
             recommendList.Sort((kp, kp1) =>
             {
-                return kp.Value.CompareTo(kp1.Value);
+                return kp1.Value.CompareTo(kp.Value);
             });
             List<Book> books= new List<Book>(); 
-            for(int i = 0; i < limit; i++)
+            for(int i = 0; i < limit && i<recommendList.Count; i++)
             {
                 books.Add(bookDetails.Books.Find(b => b.ISBN.Equals(recommendList[i].Key)));
             }
