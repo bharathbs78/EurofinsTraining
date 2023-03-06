@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{76482639-B20E-4B24-9778-0676B3934EE5}</ProjectGuid>
+    <ProjectGuid>{FC05FD6D-D86B-4AC0-B245-CE81C30C6979}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ContactManager.DataAccess</RootNamespace>
-    <AssemblyName>ContactManager.DataAccess</AssemblyName>
+    <RootNamespace>MovieApp.DataAccess</RootNamespace>
+    <AssemblyName>MovieApp.DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,16 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactMapper.cs" />
-    <Compile Include="ContactsDBRepository.cs" />
-    <Compile Include="ContactsFileRepository.cs" />
-    <Compile Include="Entities\Contact.cs" />
-    <Compile Include="Exceptions\CannotSaveContactException.cs" />
-    <Compile Include="Exceptions\ContactCannotBeEditedException.cs" />
-    <Compile Include="Exceptions\NoContactFoundException.cs" />
-    <Compile Include="IContactsRepository.cs" />
+    <Compile Include="IDbRepositroy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
